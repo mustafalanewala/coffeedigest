@@ -9,13 +9,15 @@ function generateSlug(title: string) {
 
 export async function GET(request: NextRequest) {
   try {
-    const apiUrl = 'https://newsapi.timesmed.com/WebAPI/getnewslist?siteId=4&language=English'
+    const apiUrl = 'https://newsapi.timesmed.com/WebAPI/getnewslist?siteId=11&language=English'
 
     const response = await fetch(apiUrl, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      }
+      },
+      // Revalidate upstream data every 5 minutes to avoid rate-limits and keep it fresh
+      next: { revalidate: 300 }
     })
 
     if (!response.ok) {

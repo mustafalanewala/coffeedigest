@@ -4,12 +4,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "MyStartup News - Latest News & Updates",
+  title: "CoffeeDigest - Your Daily News with a Rich Brew",
   description:
-    "Your trusted source for the latest news across business, technology, sports, and world events.",
+    "CoffeeDigest brings you the latest news, perfectly brewed and served fresh. Stay informed with our rich blend of stories from around the world.",
   keywords:
-    "news, business, technology, sports, world, economy, politics, general",
-  authors: [{ name: "MyStartup News Team" }],
+    "news, coffee news, business, technology, sports, world, economy, politics, general, coffeedigest",
+  authors: [{ name: "CoffeeDigest Editorial Team" }],
   icons: {
     icon: "/logo.png",
   },
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-gray-50">
+      <body className="font-sans antialiased bg-white">
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1e293b;
-  --accent-blue: #1d4ed8;
-  --accent-purple: #7c3aed;
+  --background: #fefcf8;
+  --foreground: #3c2817;
+  --coffee-primary: #6f4e37;
+  --coffee-secondary: #8b4513;
+  --coffee-light: #d2b48c;
+  --coffee-dark: #2f1b14;
+  --cream: #f5f5dc;
+  --espresso: #1c1c1c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
-    --foreground: #1e293b;
-    --accent-blue: #1d4ed8;
-    --accent-purple: #7c3aed;
+    --background: #1c1c1c;
+    --foreground: #f5f5dc;
+    --coffee-primary: #8b4513;
+    --coffee-secondary: #d2b48c;
+    --coffee-light: #6f4e37;
+    --coffee-dark: #f5f5dc;
+    --cream: #3c2817;
+    --espresso: #f5f5dc;
   }
 }
 
@@ -51,21 +59,38 @@ h6 {
   background-color: var(--accent-purple);
 }
 
-.border-accent-blue {
-  border-color: var(--accent-blue);
+/* Coffee theme utilities */
+.text-coffee-primary {
+  color: var(--coffee-primary);
 }
 
-.border-accent-purple {
-  border-color: var(--accent-purple);
+.text-coffee-secondary {
+  color: var(--coffee-secondary);
 }
 
-/* Hover effects with accent colors */
-.hover-accent-blue:hover {
-  color: var(--accent-blue);
+.bg-coffee-primary {
+  background-color: var(--coffee-primary);
 }
 
-.hover-accent-purple:hover {
-  color: var(--accent-purple);
+.bg-coffee-secondary {
+  background-color: var(--coffee-secondary);
+}
+
+.border-coffee-primary {
+  border-color: var(--coffee-primary);
+}
+
+.border-coffee-secondary {
+  border-color: var(--coffee-secondary);
+}
+
+/* Coffee hover effects */
+.hover-coffee-primary:hover {
+  color: var(--coffee-primary);
+}
+
+.hover-coffee-secondary:hover {
+  color: var(--coffee-secondary);
 }
 
 /* Line clamp utilities */
@@ -75,6 +100,45 @@ h6 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-clamp: 2;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+}
+
+/* Coffee-themed animations */
+@keyframes steam {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+.steam-animation {
+  animation: steam 2s ease-in-out infinite;
+}
+
+/* Coffee bean background pattern */
+.coffee-pattern {
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(120, 87, 64, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(139, 69, 19, 0.1) 0%,
+      transparent 50%
+    );
 }
 
 .line-clamp-3 {
