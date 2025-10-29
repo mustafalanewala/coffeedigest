@@ -45,6 +45,24 @@ export default function Navbar() {
             >
               Home
             </Link>
+            <Link
+              href="/gallery"
+              className="text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+            >
+              Gallery
+            </Link>
+            <Link
+              href="/video"
+              className="text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+            >
+              Videos
+            </Link>
+            <Link
+              href="/blog"
+              className="text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+            >
+              Blog
+            </Link>
             {mainCategories.map((category) => (
               <Link
                 key={category}
@@ -114,6 +132,27 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/gallery"
+                className="block text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/video"
+                className="block text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Videos
+              </Link>
+              <Link
+                href="/blog"
+                className="block text-cream hover:text-amber-200 font-medium transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
               {categories.map((category) => (
                 <Link
