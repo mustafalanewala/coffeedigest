@@ -22,10 +22,16 @@ export function getCategories(items: NewsItem[]) {
   if (!Array.isArray(items)) {
     return []
   }
-  const set = new Set(
-    items.filter((i) => i.categrory_Name?.trim()).map((i) => i.categrory_Name.trim()),
-  )
-  return Array.from(set).sort()
+  const categories: string[] = []
+  const seen = new Set<string>()
+  for (const item of items) {
+    const name = item.categrory_Name?.trim()
+    if (name && !seen.has(name)) {
+      seen.add(name)
+      categories.push(name)
+    }
+  }
+  return categories
 }
 
 export function getBySlug(items: NewsItem[], slug: string) {

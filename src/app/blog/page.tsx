@@ -1,5 +1,6 @@
 import React from "react";
 import { normalizeImage } from "@/lib/news-utils";
+import Image from "next/image";
 
 async function fetchApi() {
   const res = await fetch(
@@ -25,9 +26,11 @@ export default async function BlogPage() {
           {blogs.map((b: any) => (
             <article key={b.blog_id} className="bg-white shadow rounded-lg p-6">
               <div className="flex items-start gap-4">
-                <img
+                <Image
                   src={normalizeImage(b.image)}
                   alt={b.blog_Title}
+                  width={112}
+                  height={80}
                   className="w-28 h-20 object-cover rounded"
                 />
                 <div>
