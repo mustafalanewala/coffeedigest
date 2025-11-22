@@ -1,6 +1,7 @@
 import React from "react";
 import { normalizeImage } from "@/lib/news-utils";
 import Image from "next/image";
+import Link from "next/link";
 
 async function fetchApi() {
   const res = await fetch(
@@ -41,6 +42,12 @@ export default async function BlogPage() {
                     className="text-sm text-gray-600 mt-2"
                     dangerouslySetInnerHTML={{ __html: b.blog_Summary }}
                   />
+                  <Link
+                    href={`/blog/${b.slug}`}
+                    className="text-amber-600 hover:text-amber-800 font-medium mt-2 inline-block"
+                  >
+                    Read more →
+                  </Link>
                 </div>
               </div>
             </article>
